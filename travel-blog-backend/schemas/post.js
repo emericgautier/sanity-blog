@@ -1,7 +1,18 @@
+const getPosition = (options) => {
+    if (navigator.geolocation) {
+        return new Pomise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject, options)
+        })
+    }
+}
+
 export default {
   name: "post",
   type: "document",
   title: "Blog Post",
+  initialValue: async () => ({
+    postedAt
+  })
   fields: [
     {
       name: "postedAt",
@@ -22,12 +33,12 @@ export default {
         maxLength: 96,
       },
     },
-    // {
-    //   name: "author",
-    //   type: "reference",
-    //   title: "Author",
-    //   to: { type: "author"},
-    // },
+    {
+      name: "author",
+      type: "reference",
+      title: "Author",
+      to: { type: "author" },
+    },
     {
       name: "mainImage",
       type: "image",
@@ -36,21 +47,21 @@ export default {
         hotspot: true,
       },
     },
-    // {
-    //   name: "categories",
-    //   type: "array",
-    //   title: "Categories",
-    //   of: [{ type: 'reference', to: {type: 'category'}}]
-    // },
+    {
+      name: "categories",
+      type: "array",
+      title: "Categories",
+      of: [{ type: "reference", to: { type: "category" } }],
+    },
     {
       name: "publishedAt",
       type: "datetime",
       title: "Published At",
     },
-    // {
-    //   name: "body",
-    //   type: "blockContent",
-    //   title: "Body",
-    // },
+    {
+      name: "body",
+      type: "blockContent",
+      title: "Body",
+    },
   ],
 };
