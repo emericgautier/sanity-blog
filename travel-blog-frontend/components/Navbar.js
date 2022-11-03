@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="nav-container">
       <div className="nav-item-container">
         <Link href="/">
-          <Image src={logo} alt="Travel Blog Logo" width={140} height={140} />
+          <Image src={logo} alt="Travel Blog Logo" width={160} height={140} />
         </Link>
       </div>
       <div className="nav-item-container">
