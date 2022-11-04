@@ -1,9 +1,24 @@
-import React from "react";
-
-const Tag = () => {
+const Tag = ({ title }) => {
+  const getColor = () => {
+    let color;
+    switch (title.toLowerCase()) {
+      case "voyage":
+        color = "rgb(210,138,138)";
+        break;
+      case "gastronomie":
+        color = "rgb(169,210,138)";
+        break;
+      case "famille":
+        color = "rgb(138,173,138)";
+        break;
+      default:
+        color = "rgb(129,138,210)";
+    }
+    return color;
+  };
   return (
-    <div>
-      <h1>TAG</h1>
+    <div style={{ background: getColor() }} className="tag">
+      {title}
     </div>
   );
 };
