@@ -49,12 +49,17 @@ const Post = ({ post }) => {
                 alt={username + " avatar"}
               />
               <h3>
-                Author: <strong>{username}</strong>
+                Auteur : <strong>{username}</strong>
               </h3>
-              <p>About Author</p>
+              <p>À propos de l'auteur :</p>
               <p>{about}</p>
             </div>
-            <div className="map-container"></div>
+            <div className="map-container">
+              <Map
+                longitude={post?.postedAt?.lng}
+                latitude={post?.postedAt?.lat}
+              />
+            </div>
           </div>
         </article>
       )}
