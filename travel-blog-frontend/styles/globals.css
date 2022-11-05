@@ -49,11 +49,18 @@ nav.nav-container .nav-item-container {
 /* Card */
 .card-container {
   background: rgb(255,255,255);
-  width: 400px;
+  width: 450px;
   padding: 10px;
   border-radius: 10px;
   margin: 20px;
   box-shadow: rgba(0,0,0,0.05) 0 6px 24px 0, rgba(0,0,0,0.08) 0 0 0 1;
+}
+
+.card-container span {
+  display:block;
+  width:100%;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
 }
 
 .tag-container {
@@ -82,10 +89,22 @@ nav.nav-container .nav-item-container {
 }
 
 /* Images */
-.main-image,
-.post-image {
+.main-image {
   width: 100%;
   height: 250px;
+}
+
+.post-image {
+  /* max-height: 650px;
+  min-width: 200px;
+  border-radius: 14px;
+  -o-object-fit: contain;
+     object-fit: contain; */
+  width: 60%;
+  text-align: center;
+  margin: 40px auto;
+  display: block;
+  border-radius: 15px;
 }
 
 .avatar {
